@@ -6,7 +6,7 @@ class Address:
         #state: choose from Australian States only
         #Post code: numbers only, 4 digits long
         self.streetNumber = streetNumber
-        self.streetName = streetNumber
+        self.streetName = streetName
         self.suburb = suburb
         self.state = state   
         self.postCode = postCode
@@ -23,7 +23,7 @@ class Address:
     def setStreetName(self, streetName):
         if any(char.isdigit() for char in streetName):
             print("Name contains Digits, Please enter again")
-        elif any(char[0].islower() for char[0] in streetName.split())
+        elif any(char[0].islower() for char in streetName.split()):
             print('Please capitalize 1st letter of each word')
         else:
             self.streetName = streetName
@@ -32,7 +32,7 @@ class Address:
     def setSuburb(self, suburb):
         if any(char.isdigit() for char in suburb):
             print("Name contains Digits, Please enter again")
-        elif suburb not title:
+        elif any(char[0].islower() for char in suburb):
             print('Please capitalize 1st letter of each word')
         else:
             self.suburb = suburb
