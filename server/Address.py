@@ -5,16 +5,16 @@ class Address:
         #suburb: only letters, capitalised first letter of each word
         #state: choose from Australian States only
         #Post code: numbers only, 4 digits long
-        self.streetNumber = streetNumber
-        self.streetName = streetName
-        self.suburb = suburb
-        self.state = state   
-        self.postCode = postCode
+        self.streetNumber = None
+        self.streetName = None
+        self.suburb = None
+        self.state = None   
+        self.postCode = None
     
     def setStreetNumber(self, streetNumber):
         if any(char.isalpha() for char in streetNumber):
             print('Street number contains letters, Please enter again')
-        elif len(str(streetName)) > 1000:
+        elif len(str(streetNumber)) > 1000:
             print('Street number must be less than 1000 digits')
         else:
             self.streetNumber = streetNumber
@@ -57,6 +57,8 @@ class Address:
 
 
 
-
+add = Address()
+#add.setStreetName('1and')
+#add.setpostCode('12345')
 
            

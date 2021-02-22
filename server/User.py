@@ -1,3 +1,5 @@
+import re
+from Address import Address
 class User:
     def __init__(self):
         self.firstName = None
@@ -47,19 +49,21 @@ class User:
 
         #Ensure numbers only, 10 digits, starts with 0
 
-    def setEmailAddress():
-        return
-        #verify in format xxx@xxx.xxx
+    def setEmailAddress(self, emailAddress):
+        if type(emailAddress) is str:
+            if re.match(r'[^@]+@[^@]+\.[^@]+',emailAddress):
+                print('address is valid')
+                self.emailAddress = emailAddress
+            else:    
+                print('address is not valid')
+        else:
+            print('it is not a string')
 
-    def setAddress():
-        return
-        #create another address class with street number, street name, suburb, state, post code
-        #street number: numbers only < 1000
-        #street name: only letters, capitalised first letter of each word
-        #suburb: only letters, capitalised first letter of each word
-        #state: choose from Australian States only
-        #Post code: numbers only, 4 digits long
-
+    def setAddress(self, address):
+        if type(address) is Address:
+            self.address = address
+        else:
+            print('Address is not the same')
 
 
 user = User()
@@ -67,5 +71,10 @@ user = User()
 #user.setFirstName("ma i")
 #user.setFirstName("mai")
 #user.setFirstName("Mai")
-user.setPhoneNumber('123456')
-user.setPhoneNumber('a42356')
+#user.setPhoneNumber('123456')
+#user.setPhoneNumber('a42356')
+
+a1 = Address()
+
+#user.setEmailAddress(1) 
+user.setAddress(a1)
