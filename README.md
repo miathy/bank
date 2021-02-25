@@ -1,7 +1,7 @@
 # bank
 
 This is a bank application that stores my money!!!
-HELLO WELCOME!!!
+HELLO!!!
 
 ## Features:
 - Stores Money in an Account
